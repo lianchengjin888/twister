@@ -46,6 +46,7 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+							<li> <a href="/twist/create"> <button class="btn btn-primary">Twist</button> </a> </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -71,7 +72,23 @@
             </div>
         </nav>
 
-        @yield('content')
+        
+        <div class="container">
+            
+            
+            <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+                @include('slide.left')
+            </div>
+            
+
+            <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                @yield('content')
+            </div>
+            
+        </div>
+        
+
+        
     </div>
 
     <!-- Scripts -->
